@@ -1,13 +1,12 @@
- const formm=document.querySelector("#formto")
+const formm = document.querySelector("#formto");
 
- const RunEvent=()=>{
-formm.addEventListener("submit",degis)
- }
+const RunEvent = () => {
+    formm.addEventListener("submit", degis);
+};
 
-const degis=(x)=>{
-    x.preventDefault();
- // Tüm seçicilerin kullanımını örneklendiriyoruz
- 
+const degis = (x) => {
+    x.preventDefault(); // Formun varsayılan gönderimini engelle
+
     // 1. ID Seçici
     const mainTitle = document.getElementById('main-title');
     mainTitle.style.color = 'blue';
@@ -15,7 +14,7 @@ const degis=(x)=>{
     // 2. Class Seçici
     const paragraphs = document.getElementsByClassName('text');
     for (let i = 0; i < paragraphs.length; i++) {
-        paragraphs[i].classList.add('sariYap');
+        paragraphs[i].classList.add('sariYap'); // 'sariYap' sınıfını ekle
     }
 
     // 3. Tag (Etiket) Seçici
@@ -30,9 +29,10 @@ const degis=(x)=>{
 
     // 5. querySelectorAll (CSS Seçici) - Tüm eşleşen öğeler
     const allItems = document.querySelectorAll('.item');
-    //allItems.forEach(item => item.style.color = 'red');
-  allItems.forEach(x=>x.style.backgroundColor="green")
-  allItems.forEach(x=>x.style.color="white")
+    allItems.forEach(item => {
+        item.style.backgroundColor = "green";
+        item.style.color = "white";
+    });
 
     // 6. name Seçici
     const usernameInput = document.getElementsByName('username')[0];
@@ -47,11 +47,15 @@ const degis=(x)=>{
     const uniqueElement = document.getElementById('unique-element');
     const parentDiv = uniqueElement.parentNode;
     parentDiv.style.backgroundColor = '#f0f0f0';
-}
-const pasiff=document.getElementById("run-jss")
- const pasif=()=>{
-pasiff.classList.add=("pasif")
- }
- pasiff.addEventListener("click", pasif);
- pasif();
+};
+
+const pasiff = document.getElementById("run-jss");
+const pasif = () => {
+    pasiff.classList.add('pasif'); // 'pasif' sınıfını ekle
+};
+
+// Butona tıklama dinleyicisi ekle
+pasiff.addEventListener("click", pasif);
+
+// Event listener'ları çalıştır
 RunEvent();

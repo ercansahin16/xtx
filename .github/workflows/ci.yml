@@ -1,0 +1,22 @@
+name: CI Pipeline  # İş akışının adı
+
+on:
+  push:
+    branches:
+      - main  # Main branch'e push yapıldığında tetiklenir
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Ubuntu işletim sistemi üzerinde çalışacak
+
+    steps:
+      - name: Kodu Çek
+        uses: actions/checkout@v3  # Kodu GitHub'dan çekmek için kullanılır
+
+      - name: Node.js Kurulumu
+        uses: actions/setup-node@v3  # Node.js kurulumunu yapar
+        with:
+          node-version: '14'
+
+      - name: Testleri Çalıştır
+        run: npm test  # NPM test komutunu çalıştırır
