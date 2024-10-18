@@ -5,7 +5,7 @@ const RunEvent = () => {
 };
 
 const degis = (x) => {
-    x.preventDefault(); // Formun varsayılan gönderimini engelle
+    x.preventDefault(); 
 
     // 1. ID Seçici
     const mainTitle = document.getElementById('main-title');
@@ -14,7 +14,7 @@ const degis = (x) => {
     // 2. Class Seçici
     const paragraphs = document.getElementsByClassName('text');
     for (let i = 0; i < paragraphs.length; i++) {
-        paragraphs[i].classList.add('sariYap'); // 'sariYap' sınıfını ekle
+        paragraphs[i].classList.add('sariYap'); 
     }
 
     // 3. Tag (Etiket) Seçici
@@ -23,11 +23,11 @@ const degis = (x) => {
         listItems[i].style.fontWeight = 'bold';
     }
 
-    // 4. querySelector (CSS Seçici) - İlk eşleşen öğe
+    // 4. querySelector (CSS Seçici)
     const firstParagraph = document.querySelector('.text');
     firstParagraph.style.fontSize = '20px';
 
-    // 5. querySelectorAll (CSS Seçici) - Tüm eşleşen öğeler
+    // 5. querySelectorAll (CSS Seçici) 
     const allItems = document.querySelectorAll('.item');
     allItems.forEach(item => {
         item.style.backgroundColor = "green";
@@ -51,11 +51,11 @@ const degis = (x) => {
 
 const pasiff = document.getElementById("run-jss");
 const pasif = () => {
-    pasiff.classList.add('pasif'); // 'pasif' sınıfını ekle
+    pasiff.classList.add('pasif'); 
 };
 
-// Butona tıklama dinleyicisi ekle
+
 pasiff.addEventListener("click", pasif);
 
-// Event listener'ları çalıştır
+
 RunEvent();
